@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Pato Entertainment - Premium Event Services Across Africa & Beyond</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#FFD700',
+                        darkgold: '#B8860B',
+                        navy: '#1e3a8a',
+                        darknavy: '#1e40af'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #000000 50%, #FFD700 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .service-card {
+            background: linear-gradient(145deg, #1e3a8a, #000000);
+            border: 2px solid #FFD700;
+            color: white;
+        }
+        
+        .service-card:hover {
+            background: linear-gradient(145deg, #000000, #1e3a8a);
+            border-color: #B8860B;
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #FFD700;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .image-placeholder {
+            background: linear-gradient(45deg, #1e3a8a, #000000);
+            border: 2px dashed #FFD700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFD700;
+            font-weight: 500;
+        }
+        
+        .dark-card {
+            background: linear-gradient(145deg, #000000, #1e3a8a);
+            border: 1px solid #FFD700;
+            color: white;
+        }
+        
+        .blue-card {
+            background: linear-gradient(145deg, #1e3a8a, #1e40af);
+            border: 1px solid #FFD700;
+            color: white;
+        }
+    </style>
+</head>
+<body class="h-full bg-black">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black shadow-lg border-b-2 border-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center cursor-pointer" onclick="showPage('home')">
+                    <div class="text-2xl font-bold text-gold">MC PATO</div>
+                    <div class="text-white ml-2 text-sm">Entertainment</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link text-white hover:text-gold transition-colors active" onclick="showPage('home')">Home</a>
+                    <a href="#" class="nav-link text-white hover:text-gold transition-colors" onclick="showPage('services')">Services</a>
+                    <a href="#" class="nav-link text-white hover:text-gold transition-colors" onclick="showPage('events')">Events</a>
+                    <a href="#" class="nav-link text-white hover:text-gold transition-colors" onclick="showPage('portfolio')">Portfolio</a>
+                    <a href="#" class="nav-link text-white hover:text-gold transition-colors" onclick="showPage('about')">About</a>
+                    <a href="#" class="nav-link text-white hover:text-gold transition-colors" onclick="showPage('testimonials')">Testimonials</a>
+                    <a href="#" class="nav-link text-white hover:text-gold transition-colors" onclick="showPage('contact')">Contact</a>
+                </div>
+                <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-2 rounded-full font-semibold hover:bg-darkgold transition-colors">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="gradient-bg min-h-full flex items-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black opacity-20"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center">
+                    <div class="animate-float mb-8">
+                        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                            MC PATO
+                            <span class="text-gold block">ENTERTAINMENT</span>
+                        </h1>
+                    </div>
+                    <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                        Premium Entertainment Services Across Africa & Beyond
+                    </p>
+                    <p class="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
+                        We do the work, <span class="text-gold font-semibold">They smile</span> ✨
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-darkgold transition-all hover-lift">
+                            Book Your Event
+                        </button>
+                        <button onclick="showPage('services')" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition-all">
+                            Our Services
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Floating Elements -->
+            <div class="absolute top-20 left-10 text-6xl animate-float" style="animation-delay: -2s;">🎵</div>
+            <div class="absolute top-40 right-20 text-4xl animate-float" style="animation-delay: -4s;">🎤</div>
+            <div class="absolute bottom-20 left-20 text-5xl animate-float" style="animation-delay: -1s;">🎉</div>
+            <div class="absolute bottom-40 right-10 text-3xl animate-float" style="animation-delay: -3s;">💃</div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="py-20 bg-gradient-to-br from-black via-navy to-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Premium Services</h2>
+                    <p class="text-xl text-gold max-w-3xl mx-auto">
+                        Complete entertainment solutions for all your special events
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div class="service-card rounded-2xl p-8 text-center hover-lift">
+                        <div class="text-6xl mb-4">🎤</div>
+                        <h3 class="text-2xl font-bold text-gold mb-4">Master of Ceremonies</h3>
+                        <p class="text-gray-300 mb-6">Professional MCs who bring energy and seamless event flow.</p>
+                    </div>
+
+                    <div class="service-card rounded-2xl p-8 text-center hover-lift">
+                        <div class="text-6xl mb-4">🎵</div>
+                        <h3 class="text-2xl font-bold text-gold mb-4">Professional DJs</h3>
+                        <p class="text-gray-300 mb-6">Expert DJs with extensive music libraries and top-tier equipment.</p>
+                    </div>
+
+                    <div class="service-card rounded-2xl p-8 text-center hover-lift">
+                        <div class="text-6xl mb-4">🔊</div>
+                        <h3 class="text-2xl font-bold text-gold mb-4">PA Equipment</h3>
+                        <p class="text-gray-300 mb-6">High-quality sound systems and audio equipment.</p>
+                    </div>
+
+                    <div class="service-card rounded-2xl p-8 text-center hover-lift">
+                        <div class="text-6xl mb-4">💃</div>
+                        <h3 class="text-2xl font-bold text-gold mb-4">Professional Dancers</h3>
+                        <p class="text-gray-300 mb-6">Talented performers to add spectacular entertainment.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button onclick="showPage('services')" class="bg-navy text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-darknavy transition-colors border border-gold">
+                        View All Services
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Preview -->
+        <section class="py-20 bg-gradient-to-br from-navy via-black to-navy">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Recent Events</h2>
+                    <p class="text-xl text-gold">Bringing magic to celebrations across Africa and beyond</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="dark-card rounded-xl overflow-hidden hover-lift">
+                        <div class="image-placeholder h-48">
+                            📸 Wedding Event Photo
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Elegant Wedding Celebration</h3>
+                            <p class="text-gray-300">Complete entertainment package with MC, DJ, and dancers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dark-card rounded-xl overflow-hidden hover-lift">
+                        <div class="image-placeholder h-48">
+                            📸 Corporate Event Photo
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Corporate Gala Night</h3>
+                            <p class="text-gray-300">Professional MC and premium sound system setup</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dark-card rounded-xl overflow-hidden hover-lift">
+                        <div class="image-placeholder h-48">
+                            📸 Birthday Party Photo
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Birthday Celebration</h3>
+                            <p class="text-gray-300">DJ entertainment with dance performances</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button onclick="showPage('portfolio')" class="bg-gold text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-darkgold transition-colors">
+                        View Full Portfolio
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Preview -->
+        <section class="py-20 bg-gradient-to-br from-black via-navy to-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">What Our Clients Say</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="blue-card rounded-xl p-8 text-center">
+                        <div class="image-placeholder w-20 h-20 rounded-full mx-auto mb-4">
+                            👤
+                        </div>
+                        <p class="text-gray-300 mb-4 italic">"MC Pato Entertainment made our wedding absolutely perfect! Professional, entertaining, and flawless execution."</p>
+                        <h4 class="font-bold text-gold">Sarah & John</h4>
+                        <p class="text-sm text-gray-400">Wedding Clients</p>
+                    </div>
+                    
+                    <div class="blue-card rounded-xl p-8 text-center">
+                        <div class="image-placeholder w-20 h-20 rounded-full mx-auto mb-4">
+                            👤
+                        </div>
+                        <p class="text-gray-300 mb-4 italic">"Outstanding service for our corporate event. The MC was professional and the sound quality was exceptional."</p>
+                        <h4 class="font-bold text-gold">David Kimani</h4>
+                        <p class="text-sm text-gray-400">Corporate Client</p>
+                    </div>
+                    
+                    <div class="blue-card rounded-xl p-8 text-center">
+                        <div class="image-placeholder w-20 h-20 rounded-full mx-auto mb-4">
+                            👤
+                        </div>
+                        <p class="text-gray-300 mb-4 italic">"The dancers were incredible and the DJ kept everyone on the dance floor all night. Highly recommend!"</p>
+                        <h4 class="font-bold text-gold">Grace Wanjiku</h4>
+                        <p class="text-sm text-gray-400">Birthday Client</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button onclick="showPage('testimonials')" class="bg-navy text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-darknavy transition-colors border border-gold">
+                        Read More Reviews
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="services" class="page">
+        <div class="pt-20 pb-20 bg-gradient-to-br from-navy via-black to-gold">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Our Services</h1>
+                    <p class="text-xl text-gold max-w-3xl mx-auto">
+                        Complete entertainment solutions and trusted partnerships for unforgettable events
+                    </p>
+                </div>
+
+                <!-- Core Services -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold text-white mb-12 text-center">Core Entertainment Services</h2>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="service-card rounded-2xl p-8 hover-lift">
+                            <div class="text-6xl mb-6">🎤</div>
+                            <h3 class="text-3xl font-bold text-gold mb-4">Master of Ceremonies</h3>
+                            <p class="text-gray-300 mb-6">Professional MCs who bring charisma, energy, and seamless event flow to your special occasions. Our experienced hosts ensure your event runs smoothly from start to finish.</p>
+                            <ul class="text-gray-300 space-y-2 mb-6">
+                                <li>• Event hosting and coordination</li>
+                                <li>• Crowd engagement and entertainment</li>
+                                <li>• Professional presentation skills</li>
+                                <li>• Multilingual capabilities</li>
+                            </ul>
+                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-colors border border-gold">
+                                Book MC Services
+                            </button>
+                        </div>
+
+                        <div class="service-card rounded-2xl p-8 hover-lift">
+                            <div class="text-6xl mb-6">🎵</div>
+                            <h3 class="text-3xl font-bold text-gold mb-4">Professional DJs</h3>
+                            <p class="text-gray-300 mb-6">Expert DJs with extensive music libraries and top-tier equipment for unforgettable entertainment that keeps your guests dancing all night long.</p>
+                            <ul class="text-gray-300 space-y-2 mb-6">
+                                <li>• Extensive music collection (all genres)</li>
+                                <li>• Professional mixing and transitions</li>
+                                <li>• Custom playlists for your event</li>
+                                <li>• Reading the crowd and atmosphere</li>
+                            </ul>
+                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-colors border border-gold">
+                                Book DJ Services
+                            </button>
+                        </div>
+
+                        <div class="service-card rounded-2xl p-8 hover-lift">
+                            <div class="text-6xl mb-6">🔊</div>
+                            <h3 class="text-3xl font-bold text-gold mb-4">PA Equipment Rental</h3>
+                            <p class="text-gray-300 mb-6">High-quality sound systems, microphones, and audio equipment for crystal-clear event audio that ensures every word and note is heard perfectly.</p>
+                            <ul class="text-gray-300 space-y-2 mb-6">
+                                <li>• Professional sound systems</li>
+                                <li>• Wireless and wired microphones</li>
+                                <li>• Mixing consoles and amplifiers</li>
+                                <li>• Technical setup and support</li>
+                            </ul>
+                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-colors border border-gold">
+                                Rent Equipment
+                            </button>
+                        </div>
+
+                        <div class="service-card rounded-2xl p-8 hover-lift">
+                            <div class="text-6xl mb-6">💃</div>
+                            <h3 class="text-3xl font-bold text-gold mb-4">Professional Dancers</h3>
+                            <p class="text-gray-300 mb-6">Talented dancers and performers to add spectacular entertainment to your celebrations with choreographed performances and interactive dance sessions.</p>
+                            <ul class="text-gray-300 space-y-2 mb-6">
+                                <li>• Choreographed performances</li>
+                                <li>• Traditional and modern dance styles</li>
+                                <li>• Interactive dance sessions</li>
+                                <li>• Custom routines for your event</li>
+                            </ul>
+                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-colors border border-gold">
+                                Book Dancers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partner Services -->
+                <div class="dark-card rounded-3xl p-12">
+                    <h2 class="text-3xl font-bold text-white mb-12 text-center">Trusted Partner Services</h2>
+                    <p class="text-center text-gold mb-12 text-lg">Complete event solutions through our network of premium partners</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="blue-card rounded-xl p-8 text-center hover-lift">
+                            <div class="text-5xl mb-4">🍽️</div>
+                            <h3 class="text-2xl font-bold text-gold mb-4">Catering Services</h3>
+                            <p class="text-gray-300 mb-6">Premium catering partners offering diverse menus from local delicacies to international cuisine for all event sizes.</p>
+                            <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
+                                Request Catering
+                            </button>
+                        </div>
+
+                        <div class="blue-card rounded-xl p-8 text-center hover-lift">
+                            <div class="text-5xl mb-4">📸</div>
+                            <h3 class="text-2xl font-bold text-gold mb-4">Photography & Videography</h3>
+                            <p class="text-gray-300 mb-6">Professional photographers and videographers to capture every precious moment of your special event.</p>
+                            <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
+                                Book Photography
+                            </button>
+                        </div>
+
+                        <div class="blue-card rounded-xl p-8 text-center hover-lift">
+                            <div class="text-5xl mb-4">⛺</div>
+                            <h3 class="text-2xl font-bold text-gold mb-4">Tent & Decor</h3>
+                            <p class="text-gray-300 mb-6">Beautiful tents, decorations, and venue setup services to transform any space into your dream event location.</p>
+                            <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
+                                Request Tents
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EVENTS PAGE -->
+    <div id="events" class="page">
+        <div class="pt-20 pb-20 bg-gradient-to-br from-black via-navy to-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Event Types</h1>
+                    <p class="text-xl text-gold max-w-3xl mx-auto">
+                        We bring magic to every type of celebration across Africa and beyond
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                        <div class="text-6xl mb-6">💒</div>
+                        <h3 class="text-2xl font-bold text-gold mb-4">Weddings</h3>
+                        <p class="text-gray-300 mb-6">Make your special day unforgettable with our complete wedding entertainment package including MC, DJ, dancers, and all partner services.</p>
+                        <ul class="text-gray-300 space-y-2 mb-6">
+                            <li>• Ceremony and reception hosting</li>
+                            <li>• Wedding music and entertainment</li>
+                            <li>• Photography and videography</li>
+                            <li>• Catering and venue setup</li>
+                        </ul>
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
+                            Plan Wedding
+                        </button>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                        <div class="text-6xl mb-6">🎂</div>
+                        <h3 class="text-2xl font-bold text-gold mb-4">Birthday Parties</h3>
+                        <p class="text-gray-300 mb-6">Celebrate another year of life with energetic entertainment, great music, and unforgettable memories for all ages.</p>
+                        <ul class="text-gray-300 space-y-2 mb-6">
+                            <li>• Age-appropriate entertainment</li>
+                            <li>• Interactive games and activities</li>
+                            <li>• Custom music playlists</li>
+                            <li>• Party planning and coordination</li>
+                        </ul>
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
+                            Plan Birthday
+                        </button>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                        <div class="text-6xl mb-6">🎓</div>
+                        <h3 class="text-2xl font-bold text-gold mb-4">Graduations</h3>
+                        <p class="text-gray-300 mb-6">Honor academic achievements with professional ceremony hosting and celebration entertainment that marks this important milestone.</p>
+                        <ul class="text-gray-300 space-y-2 mb-6">
+                            <li>• Ceremony coordination</li>
+                            <li>• Professional presentation</li>
+                            <li>• Celebration entertainment</li>
+                            <li>• Photography services</li>
+                        </ul>
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
+                            Plan Graduation
+                        </button>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                        <div class="text-6xl mb-6">🏢</div>
+                        <h3 class="text-2xl font-bold text-gold mb-4">Corporate Events</h3>
+                        <p class="text-gray-300 mb-6">Professional corporate entertainment for conferences, seminars, product launches, and company celebrations.</p>
+                        <ul class="text-gray-300 space-y-2 mb-6">
+                            <li>• Professional MC services</li>
+                            <li>• Conference coordination</li>
+                            <li>• Corporate entertainment</li>
+                            <li>• Audio-visual support</li>
+                        </ul>
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
+                            Plan Corporate Event
+                        </button>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                        <div class="text-6xl mb-6">💼</div>
+                        <h3 class="text-2xl font-bold text-gold mb-4">Conferences & Seminars</h3>
+                        <p class="text-gray-300 mb-6">Professional hosting and technical support for educational and business conferences with seamless execution.</p>
+                        <ul class="text-gray-300 space-y-2 mb-6">
+                            <li>• Professional moderation</li>
+                            <li>• Technical coordination</li>
+                            <li>• Audience engagement</li>
+                            <li>• Break entertainment</li>
+                        </ul>
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
+                            Plan Conference
+                        </button>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                        <div class="text-6xl mb-6">🎉</div>
+                        <h3 class="text-2xl font-bold text-gold mb-4">Special Celebrations</h3>
+                        <p class="text-gray-300 mb-6">Any other special occasion you want to celebrate - we customize our services to make your event unique and memorable.</p>
+                        <ul class="text-gray-300 space-y-2 mb-6">
+                            <li>• Custom event planning</li>
+                            <li>• Flexible service packages</li>
+                            <li>• Themed entertainment</li>
+                            <li>• Complete coordination</li>
+                        </ul>
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
+                            Plan Custom Event
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PORTFOLIO PAGE -->
+    <div id="portfolio" class="page">
+        <div class="pt-20 pb-20 bg-gradient-to-br from-navy via-black to-navy">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Our Portfolio</h1>
+                    <p class="text-xl text-gold max-w-3xl mx-auto">
+                        Showcasing memorable events and celebrations we've brought to life
+                    </p>
+                </div>
+
+                <!-- Wedding Gallery -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-8">Wedding Celebrations</h2>
+                    <div class="portfolio-grid">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                            <div class="image-placeholder h-64">
+                                📸 Wedding Ceremony Photo
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Elegant Garden Wedding</h3>
+                                <p class="text-gray-300">Complete entertainment with MC, DJ, and traditional dancers</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                            <div class="image-placeholder h-64">
+                                📸 Wedding Reception Photo
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Grand Reception Hall</h3>
+                                <p class="text-gray-300">Professional sound system and dance entertainment</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                            <div class="image-placeholder h-64">
+                                🎥 Wedding Video Highlight
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Wedding Highlights Video</h3>
+                                <p class="text-gray-300">Professional videography capturing special moments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Events -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-8">Corporate Events</h2>
+                    <div class="portfolio-grid">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                            <div class="image-placeholder h-64">
+                                📸 Conference Setup Photo
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Annual Business Conference</h3>
+                                <p class="text-gray-300">Professional MC and complete audio-visual setup</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                            <div class="image-placeholder h-64">
+                                📸 Corporate Gala Photo
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Corporate Gala Dinner</h3>
+                                <p class="text-gray-300">Elegant entertainment and professional hosting</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                            <div class="image-placeholder h-64">
+                                📸 Product Launch Photo
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Product Launch Event</h3>
+                                <p class="text-gray-300">Dynamic presentation and audience engagement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birthday Parties -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-8">Birthday Celebrations</h2>
+                    <div class="portfolio-grid">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                            <div class="image-placeholder h-64">
+                                📸 Kids Birthday Party Photo
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Children's Birthday Party</h3>
+                                <p class="text-gray-300">Interactive entertainment and age-appropriate music</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                            <div class="image-placeholder h-64">
+                                📸 Adult Birthday Party Photo
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Milestone Birthday Celebration</h3>
+                                <p class="text-gray-300">DJ entertainment with professional dancers</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                            <div class="image-placeholder h-64">
+                                🎥 Birthday Party Video
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Party Highlights Reel</h3>
+                                <p class="text-gray-300">Capturing the joy and excitement of the celebration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Testimonials Section -->
+                <div class="blue-card rounded-3xl p-12">
+                    <h2 class="text-3xl font-bold text-white mb-8 text-center">Video Testimonials</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg">
+                            <div class="image-placeholder h-48">
+                                🎥 Client Video Testimonial 1
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gold mb-2">Sarah & John - Wedding Clients</h3>
+                                <p class="text-gray-300">"MC Pato Entertainment exceeded our expectations..."</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg">
+                            <div class="image-placeholder h-48">
+                                🎥 Client Video Testimonial 2
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gold mb-2">Corporate Client Review</h3>
+                                <p class="text-gray-300">"Professional service that made our event memorable..."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div class="pt-20 pb-20 bg-gradient-to-br from-black via-navy to-gold">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">About Us</h1>
+                    <p class="text-xl text-gold max-w-3xl mx-auto">
+                        Meet the team behind Africa's premier entertainment booking platform
+                    </p>
+                </div>
+
+                <!-- Company Story -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-4xl font-bold text-white mb-6">Our Story</h2>
+                            <p class="text-lg text-gray-300 mb-6">
+                                MC Pato Entertainment was born from a passion for creating unforgettable moments. We are committed to giving our clients the absolute best entertainment experience across Africa and beyond.
+                            </p>
+                            <p class="text-lg text-gray-300 mb-8">
+                                From intimate celebrations to grand events, we handle every detail with professionalism and creativity. Our mission is simple: We do the work, They smile.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <div class="flex items-center">
+                                    <div class="bg-gold rounded-full p-3 mr-4">
+                                        <span class="text-black font-bold">✓</span>
+                                    </div>
+                                    <span class="text-gray-300">Professional Excellence</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="bg-gold rounded-full p-3 mr-4">
+                                        <span class="text-black font-bold">✓</span>
+                                    </div>
+                                    <span class="text-gray-300">Global Reach</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="bg-gradient-to-br from-navy to-gold rounded-2xl p-8 text-white text-center">
+                                <div class="text-6xl mb-4">🌍</div>
+                                <h3 class="text-2xl font-bold mb-4">Serving Africa & Beyond</h3>
+                                <p class="text-lg opacity-90">
+                                    Bringing world-class entertainment to events across the continent and internationally
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold text-white mb-12 text-center">Meet Our Team</h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- MC Pato -->
+                        <div class="text-center dark-card rounded-2xl p-8">
+                            <div class="image-placeholder w-48 h-48 rounded-full mx-auto mb-6">
+                                📸 MC Pato Photo
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">MC Pato</h3>
+                            <p class="text-gold font-semibold mb-4">Founder & Lead MC</p>
+                            <p class="text-gray-300">
+                                The visionary behind MC Pato Entertainment, bringing charisma, professionalism, and years of experience to every event. Known for seamless event coordination and engaging audience interaction.
+                            </p>
+                        </div>
+
+                        <!-- Dance Team -->
+                        <div class="text-center dark-card rounded-2xl p-8">
+                            <div class="image-placeholder w-48 h-48 rounded-full mx-auto mb-6">
+                                📸 Dance Team Photo
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Professional Dancers</h3>
+                            <p class="text-gold font-semibold mb-4">Dance Entertainment Team</p>
+                            <p class="text-gray-300">
+                                Our talented group of professional dancers specializing in traditional and modern dance styles. They bring energy, culture, and spectacular performances to every celebration.
+                            </p>
+                        </div>
+
+                        <!-- DJ Team -->
+                        <div class="text-center dark-card rounded-2xl p-8">
+                            <div class="image-placeholder w-48 h-48 rounded-full mx-auto mb-6">
+                                📸 DJ Team Photo
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">DJ Team</h3>
+                            <p class="text-gold font-semibold mb-4">Music & Sound Specialists</p>
+                            <p class="text-gray-300">
+                                Expert DJs with extensive music knowledge and professional mixing skills. They read the crowd, create the perfect atmosphere, and keep the dance floor alive throughout your event.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partner Network -->
+                <div class="blue-card rounded-3xl p-12">
+                    <h2 class="text-3xl font-bold text-white mb-8 text-center">Our Partner Network</h2>
+                    <p class="text-center text-gold mb-12 text-lg">
+                        We've partnered with the best in the industry to provide complete event solutions
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="dark-card rounded-xl p-8 text-center">
+                            <div class="text-5xl mb-4">🍽️</div>
+                            <h3 class="text-xl font-bold text-gold mb-4">Premium Caterers</h3>
+                            <p class="text-gray-300">
+                                Trusted catering partners offering diverse menus from local delicacies to international cuisine, ensuring your guests enjoy exceptional dining experiences.
+                            </p>
+                        </div>
+
+                        <div class="dark-card rounded-xl p-8 text-center">
+                            <div class="text-5xl mb-4">📸</div>
+                            <h3 class="text-xl font-bold text-gold mb-4">Professional Photographers</h3>
+                            <p class="text-gray-300">
+                                Skilled photographers and videographers who capture every precious moment, creating lasting memories of your special occasions.
+                            </p>
+                        </div>
+
+                        <div class="dark-card rounded-xl p-8 text-center">
+                            <div class="text-5xl mb-4">⛺</div>
+                            <h3 class="text-xl font-bold text-gold mb-4">Tent & Decor Specialists</h3>
+                            <p class="text-gray-300">
+                                Expert tent providers and decorators who transform any venue into your dream event space with beautiful setups and elegant decorations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS PAGE -->
+    <div id="testimonials" class="page">
+        <div class="pt-20 pb-20 bg-gradient-to-br from-navy via-black to-navy">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Client Testimonials</h1>
+                    <p class="text-xl text-gold max-w-3xl mx-auto">
+                        Hear what our clients say about their unforgettable experiences with MC Pato Entertainment
+                    </p>
+                </div>
+
+                <!-- Written Testimonials -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="blue-card rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="image-placeholder w-16 h-16 rounded-full mr-4">
+                                👤
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Sarah & John Kimani</h4>
+                                <p class="text-sm text-gray-400">Wedding Clients</p>
+                            </div>
+                        </div>
+                        <div class="text-gold mb-4">★★★★★</div>
+                        <p class="text-gray-300 italic">
+                            "MC Pato Entertainment made our wedding absolutely perfect! From the professional MC to the amazing dancers, every detail was flawlessly executed. Our guests are still talking about how incredible the entertainment was."
+                        </p>
+                    </div>
+
+                    <div class="blue-card rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="image-placeholder w-16 h-16 rounded-full mr-4">
+                                👤
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">David Mwangi</h4>
+                                <p class="text-sm text-gray-400">Corporate Client</p>
+                            </div>
+                        </div>
+                        <div class="text-gold mb-4">★★★★★</div>
+                        <p class="text-gray-300 italic">
+                            "Outstanding service for our annual corporate conference. The MC was professional, engaging, and kept our 500+ attendees entertained throughout the event. The sound quality was exceptional."
+                        </p>
+                    </div>
+
+                    <div class="blue-card rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="image-placeholder w-16 h-16 rounded-full mr-4">
+                                👤
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Grace Wanjiku</h4>
+                                <p class="text-sm text-gray-400">Birthday Client</p>
+                            </div>
+                        </div>
+                        <div class="text-gold mb-4">★★★★★</div>
+                        <p class="text-gray-300 italic">
+                            "The dancers were absolutely incredible and the DJ kept everyone on the dance floor all night long. My 30th birthday party was everything I dreamed of and more. Highly recommend!"
+                        </p>
+                    </div>
+
+                    <div class="blue-card rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="image-placeholder w-16 h-16 rounded-full mr-4">
+                                👤
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Peter Ochieng</h4>
+                                <p class="text-sm text-gray-400">Graduation Client</p>
+                            </div>
+                        </div>
+                        <div class="text-gold mb-4">★★★★★</div>
+                        <p class="text-gray-300 italic">
+                            "Professional, punctual, and perfectly executed. MC Pato handled our graduation ceremony with such grace and professionalism. The celebration afterwards was fantastic!"
+                        </p>
+                    </div>
+
+                    <div class="blue-card rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="image-placeholder w-16 h-16 rounded-full mr-4">
+                                👤
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Mary Njeri</h4>
+                                <p class="text-sm text-gray-400">Wedding Client</p>
+                            </div>
+                        </div>
+                        <div class="text-gold mb-4">★★★★★</div>
+                        <p class="text-gray-300 italic">
+                            "From planning to execution, MC Pato Entertainment was exceptional. They coordinated with our caterers and photographers seamlessly. Truly a one-stop solution for events!"
+                        </p>
+                    </div>
+
+                    <div class="blue-card rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="image-placeholder w-16 h-16 rounded-full mr-4">
+                                👤
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">James Mutua</h4>
+                                <p class="text-sm text-gray-400">Corporate Client</p>
+                            </div>
+                        </div>
+                        <div class="text-gold mb-4">★★★★★</div>
+                        <p class="text-gray-300 italic">
+                            "The PA equipment was top-notch and the technical support was excellent. Our product launch went off without a hitch. MC Pato's team is truly professional."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video Testimonials -->
+                <div class="dark-card rounded-3xl p-12">
+                    <h2 class="text-3xl font-bold text-white mb-8 text-center">Video Testimonials</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="blue-card rounded-xl overflow-hidden shadow-lg">
+                            <div class="image-placeholder h-64">
+                                🎥 Video Testimonial - Wedding Couple
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Sarah & John - Wedding Testimonial</h3>
+                                <p class="text-gray-300 mb-4">"MC Pato Entertainment made our dream wedding come true. Watch our full testimonial to see why we recommend them to everyone!"</p>
+                                <div class="text-gold">★★★★★</div>
+                            </div>
+                        </div>
+                        
+                        <div class="blue-card rounded-xl overflow-hidden shadow-lg">
+                            <div class="image-placeholder h-64">
+                                🎥 Video Testimonial - Corporate Client
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Corporate Event Success Story</h3>
+                                <p class="text-gray-300 mb-4">"See how MC Pato Entertainment transformed our corporate conference into an engaging and memorable experience."</p>
+                                <div class="text-gold">★★★★★</div>
+                            </div>
+                        </div>
+                        
+                        <div class="blue-card rounded-xl overflow-hidden shadow-lg">
+                            <div class="image-placeholder h-64">
+                                🎥 Video Testimonial - Birthday Client
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Birthday Party Highlights</h3>
+                                <p class="text-gray-300 mb-4">"From planning to execution, see how MC Pato Entertainment created the perfect birthday celebration."</p>
+                                <div class="text-gold">★★★★★</div>
+                            </div>
+                        </div>
+                        
+                        <div class="blue-card rounded-xl overflow-hidden shadow-lg">
+                            <div class="image-placeholder h-64">
+                                🎥 Video Testimonial - Multiple Clients
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gold mb-2">Client Success Compilation</h3>
+                                <p class="text-gray-300 mb-4">"Hear from multiple satisfied clients about their experiences with MC Pato Entertainment across different event types."</p>
+                                <div class="text-gold">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-16">
+                    <h2 class="text-3xl font-bold text-white mb-6">Ready to Create Your Own Success Story?</h2>
+                    <p class="text-xl text-gold mb-8">Join hundreds of satisfied clients who chose MC Pato Entertainment for their special events</p>
+                    <button onclick="showPage('contact')" class="bg-gold text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-darkgold transition-colors">
+                        Book Your Event Today
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <div class="pt-20 pb-20 bg-gradient-to-br from-black via-navy to-gold">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Contact & Booking</h1>
+                    <p class="text-xl text-gold max-w-3xl mx-auto">
+                        Ready to make your event unforgettable? Get in touch for a custom quote
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Booking Form -->
+                    <div class="dark-card rounded-2xl p-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">Request Custom Quote</h2>
+                        
+                        <form id="mainBookingForm" onsubmit="submitMainBooking(event)">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="mainClientName" class="block text-sm font-semibold text-gold mb-2">Full Name *</label>
+                                    <input type="text" id="mainClientName" name="clientName" required class="w-full px-4 py-3 border border-gold rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent bg-black text-white">
+                                </div>
+                                
+                                <div>
+                                    <label for="mainClientPhone" class="block text-sm font-semibold text-gold mb-2">Phone Number *</label>
+                                    <input type="tel" id="mainClientPhone" name="clientPhone" required class="w-full px-4 py-3 border border-gold rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent bg-black text-white">
+                                </div>
+                                
+                                <div>
+                                    <label for="mainClientEmail" class="block text-sm font-semibold text-gold mb-2">Email Address *</label>
+                                    <input type="email" id="mainClientEmail" name="clientEmail" required class="w-full px-4 py-3 border border-gold rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent bg-black text-white">
+                                </div>
+                                
+                                <div>
+                                    <label for="mainEventType" class="block text-sm font-semibold text-gold mb-2">Event Type *</label>
+                                    <select id="mainEventType" name="eventType" required class="w-full px-4 py-3 border border-gold rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent bg-black text-white">
+                                        <option value="">Select Event Type</option>
+                                        <option value="Wedding">Wedding</option>
+                                        <option value="Birthday">Birthday Party</option>
+                                        <option value="Graduation">Graduation</option>
+                                        <option value="Conference">Conference/Seminar</option>
+                                        <option value="Corporate">Corporate Event</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="mainEventDate" class="block text-sm font-semibold text-gold mb-2">Event Date *</label>
+                                    <input type="date" id="mainEventDate" name="eventDate" required class="w-full px-4 py-3 border border-gold rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent bg-black text-white">
+                                </div>
+                                
+                                <div>
+                                    <label for="mainEventLocation" class="block text-sm font-semibold text-gold mb-2">Event Location *</label>
+                                    <input type="text" id="mainEventLocation" name="eventLocation" required placeholder="City, Country" class="w-full px-4 py-3 border border-gold rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent bg-black text-white">
+                                </div>
+                                
+                                <div>
+                                    <label for="mainGuestCount" class="block text-sm font-semibold text-gold mb-2">Expected Guests</label>
+                                    <input type="number" id="mainGuestCount" name="guestCount" placeholder="Number of guests" class="w-full px-4 py-3 border border-gold rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent bg-black text-white">
+                                </div>
+                                
+                                <div>
+                                    <label for="mainBudget" class="block text-sm font-semibold text-gold mb-2">Budget Range</label>
+                                    <select id="mainBudget" name="budget" class="w-full px-4 py-3 border border-gold rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent bg-black text-white">
+                                        <option value="">Select Budget Range</option>
+                                        <option value="Under $500">Under $500</option>
+                                        <option value="$500 - $1,000">$500 - $1,000</option>
+                                        <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                                        <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                                        <option value="$5,000+">$5,000+</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <label class="block text-sm font-semibold text-gold mb-2">Core Services Needed *</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="flex items-center text-white">
+                                        <input type="checkbox" name="services" value="MC" class="mr-2 text-gold focus:ring-gold">
+                                        <span>Master of Ceremonies</span>
+                                    </label>
+                                    <label class="flex items-center text-white">
+                                        <input type="checkbox" name="services" value="DJ" class="mr-2 text-gold focus:ring-gold">
+                                        <span>Professional DJ</span>
+                                    </label>
+                                    <label class="flex items-center text-white">
+                                        <input type="checkbox" name="services" value="PA" class="mr-2 text-gold focus:ring-gold">
+                                        <span>PA Equipment</span>
+                                    </label>
+                                    <label class="flex items-center text-white">
+                                        <input type="checkbox" name="services" value="Dancers" class="mr-2 text-gold focus:ring-gold">
+                                        <span>Professional Dancers</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <label class="block text-sm font-semibold text-gold mb-2">Partner Services Needed</label>
+                                <div class="grid grid-cols-1 gap-4">
+                                    <label class="flex items-center text-white">
+                                        <input type="checkbox" name="partnerServices" value="Catering" class="mr-2 text-gold focus:ring-gold">
+                                        <span>Catering Services</span>
+                                    </label>
+                                    <label class="flex items-center text-white">
+                                        <input type="checkbox" name="partnerServices" value="Photography" class="mr-2 text-gold focus:ring-gold">
+                                        <span>Photography & Videography</span>
+                                    </label>
+                                    <label class="flex items-center text-white">
+                                        <input type="checkbox" name="partnerServices" value="Tents" class="mr-2 text-gold focus:ring-gold">
+                                        <span>Tent & Decor Services</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <label for="mainSpecialRequests" class="block text-sm font-semibold text-gold mb-2">Special Requests or Details</label>
+                                <textarea id="mainSpecialRequests" name="specialRequests" rows="4" placeholder="Tell us about your vision, special requirements, or any other details..." class="w-full px-4 py-3 border border-gold rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent bg-black text-white"></textarea>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <button type="submit" class="w-full px-6 py-4 bg-gold text-black rounded-lg hover:bg-darkgold transition-colors font-semibold text-lg">
+                                    Request Custom Quote
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-8">Get In Touch</h2>
+                        
+                        <div class="space-y-6 mb-12">
+                            <div class="flex items-center">
+                                <div class="bg-gold rounded-full p-4 mr-6">
+                                    <span class="text-2xl">📞</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white">Call Us</h3>
+                                    <a href="tel:+254711306728" class="text-gold hover:text-darkgold transition-colors text-lg">
+                                        +254 711 306 728
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-gold rounded-full p-4 mr-6">
+                                    <span class="text-2xl">💬</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white">WhatsApp</h3>
+                                    <a href="https://wa.me/254711306728" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-darkgold transition-colors text-lg">
+                                        +254 711 306 728
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-gold rounded-full p-4 mr-6">
+                                    <span class="text-2xl">✉️</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white">Email</h3>
+                                    <a href="mailto:mcpatoentertainment@gmail.com" class="text-gold hover:text-darkgold transition-colors text-lg">
+                                        mcpatoentertainment@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Areas -->
+                        <div class="blue-card rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold text-white mb-4">Service Areas</h3>
+                            <p class="text-lg mb-4 text-gray-300">We proudly serve clients across:</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>🌍 Kenya (Primary Base)</li>
+                                <li>🌍 East Africa Region</li>
+                                <li>🌍 All of Africa</li>
+                                <li>🌍 International Events</li>
+                            </ul>
+                            <p class="text-gold font-semibold mt-6">
+                                "We do the work, They smile" ✨
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t-2 border-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="text-3xl font-bold text-gold mb-4">MC PATO ENTERTAINMENT</div>
+                    <p class="text-gray-400 mb-6">Premium Entertainment Services • Africa & Beyond</p>
+                    <p class="text-gold font-semibold">We do the work, They smile ✨</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-gold">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" onclick="showPage('home')" class="text-gray-400 hover:text-gold transition-colors">Home</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="text-gray-400 hover:text-gold transition-colors">Services</a></li>
+                        <li><a href="#" onclick="showPage('portfolio')" class="text-gray-400 hover:text-gold transition-colors">Portfolio</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="text-gray-400 hover:text-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-gold">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📞 +254 711 306 728</li>
+                        <li>✉️ mcpatoentertainment@gmail.com</li>
+                        <li>🌍 Kenya & Beyond</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-500">&copy; 2024 MC Pato Entertainment. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Message -->
+    <div id="mainSuccessMessage" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg z-50 hidden">
+        <div class="flex items-center">
+            <span class="mr-2">✓</span>
+            <span>Booking request sent successfully! We'll contact you within 24 hours.</span>
+        </div>
+    </div>
+
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Find and activate the corresponding nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.textContent.toLowerCase() === pageId || 
+                    (pageId === 'home' && link.textContent.toLowerCase() === 'home')) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Form Submission
+        function submitMainBooking(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const services = [];
+            const partnerServices = [];
+            
+            document.querySelectorAll('input[name="services"]:checked').forEach(cb => {
+                services.push(cb.value);
+            });
+            
+            document.querySelectorAll('input[name="partnerServices"]:checked').forEach(cb => {
+                partnerServices.push(cb.value);
+            });
+            
+            // Validate services
+            if (services.length === 0) {
+                alert('Please select at least one core service.');
+                return;
+            }
+            
+            // Create booking summary
+            const bookingData = {
+                name: formData.get('clientName'),
+                phone: formData.get('clientPhone'),
+                email: formData.get('clientEmail'),
+                eventType: formData.get('eventType'),
+                eventDate: formData.get('eventDate'),
+                location: formData.get('eventLocation'),
+                guests: formData.get('guestCount'),
+                budget: formData.get('budget'),
+                services: services,
+                partnerServices: partnerServices,
+                specialRequests: formData.get('specialRequests')
+            };
+            
+            // In a real application, this would send to a server
+            console.log('Booking Request:', bookingData);
+            
+            // Show success message
+            showMainSuccessMessage();
+            
+            // Reset form
+            document.getElementById('mainBookingForm').reset();
+        }
+
+        function showMainSuccessMessage() {
+            const successMsg = document.getElementById('mainSuccessMessage');
+            successMsg.classList.remove('hidden');
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Set minimum date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('mainEventDate');
+            if (dateInput) {
+                dateInput.min = new Date().toISOString().split('T')[0];
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99108e6537dc8a67',t:'MTc2MDg3OTg1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
