@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MC Pato Entertainment - Premium Event Services Across Africa & Beyond</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -120,8 +122,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center cursor-pointer" onclick="showPage('home')">
-                    <div class="text-2xl font-bold text-gold">MC PATO</div>
-                    <div class="text-white ml-2 text-sm">Entertainment</div>
+                    <div class="text-xl md:text-2xl font-bold text-gold">MC PATO</div>
+                    <div class="text-white ml-2 text-xs md:text-sm">Entertainment</div>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#" class="nav-link text-white hover:text-gold transition-colors active" onclick="showPage('home')">Home</a>
@@ -132,9 +134,39 @@
                     <a href="#" class="nav-link text-white hover:text-gold transition-colors" onclick="showPage('testimonials')">Testimonials</a>
                     <a href="#" class="nav-link text-white hover:text-gold transition-colors" onclick="showPage('contact')">Contact</a>
                 </div>
-                <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-2 rounded-full font-semibold hover:bg-darkgold transition-colors">
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button onclick="showPage('contact')" class="bg-gold text-black px-4 py-2 rounded-full font-semibold hover:bg-darkgold transition-colors text-sm">
+                        Book Now
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="text-white hover:text-gold transition-colors">
+                        <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Desktop Book Now button -->
+                <button onclick="showPage('contact')" class="hidden md:block bg-gold text-black px-6 py-2 rounded-full font-semibold hover:bg-darkgold transition-colors">
                     Book Now
                 </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="md:hidden bg-black border-t border-gold hidden">
+            <div class="px-4 py-4 space-y-4">
+                <a href="#" class="block text-white hover:text-gold transition-colors py-2" onclick="showPage('home'); toggleMobileMenu()">Home</a>
+                <a href="#" class="block text-white hover:text-gold transition-colors py-2" onclick="showPage('services'); toggleMobileMenu()">Services</a>
+                <a href="#" class="block text-white hover:text-gold transition-colors py-2" onclick="showPage('events'); toggleMobileMenu()">Events</a>
+                <a href="#" class="block text-white hover:text-gold transition-colors py-2" onclick="showPage('portfolio'); toggleMobileMenu()">Portfolio</a>
+                <a href="#" class="block text-white hover:text-gold transition-colors py-2" onclick="showPage('about'); toggleMobileMenu()">About</a>
+                <a href="#" class="block text-white hover:text-gold transition-colors py-2" onclick="showPage('testimonials'); toggleMobileMenu()">Testimonials</a>
+                <a href="#" class="block text-white hover:text-gold transition-colors py-2" onclick="showPage('contact'); toggleMobileMenu()">Contact</a>
             </div>
         </div>
     </nav>
@@ -146,24 +178,24 @@
             <div class="absolute inset-0 bg-black opacity-20"></div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center">
-                    <div class="animate-float mb-8">
+                    <div class="animate-float mb-8" data-aos="fade-up" data-aos-duration="1000">
                         <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
                             MC PATO
                             <span class="text-gold block">ENTERTAINMENT</span>
                         </h1>
                     </div>
-                    <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                    <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                         Premium Entertainment Services Across Africa & Beyond
                     </p>
-                    <p class="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
+                    <p class="text-lg text-gray-300 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
                         Your Joy, <span class="text-gold font-semibold">Our Concern</span> ✨
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button onclick="showPage('contact')" class="bg-gold text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-darkgold transition-all hover-lift">
-                            Book Your Event
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-darkgold transition-all hover-lift transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            🎉 Book Your Event Now
                         </button>
-                        <button onclick="showPage('services')" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition-all">
-                            Our Services
+                        <button onclick="showPage('services')" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition-all transform hover:scale-105">
+                            ✨ Explore Our Services
                         </button>
                     </div>
                 </div>
@@ -179,7 +211,7 @@
         <!-- Services Preview -->
         <section class="py-20 bg-gradient-to-br from-black via-navy to-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-down">
                     <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Premium Services</h2>
                     <p class="text-xl text-gold max-w-3xl mx-auto">
                         Complete entertainment solutions for all your special events
@@ -187,34 +219,34 @@
                 </div>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                    <div class="service-card rounded-2xl p-8 text-center hover-lift">
+                    <div class="service-card rounded-2xl p-8 text-center hover-lift" data-aos="fade-up" data-aos-delay="100">
                         <div class="text-6xl mb-4">🎤</div>
                         <h3 class="text-2xl font-bold text-gold mb-4">Master of Ceremonies</h3>
                         <p class="text-gray-300 mb-6">Professional MCs who bring energy and seamless event flow.</p>
                     </div>
 
-                    <div class="service-card rounded-2xl p-8 text-center hover-lift">
+                    <div class="service-card rounded-2xl p-8 text-center hover-lift" data-aos="fade-up" data-aos-delay="200">
                         <div class="text-6xl mb-4">🎵</div>
                         <h3 class="text-2xl font-bold text-gold mb-4">Professional DJs</h3>
                         <p class="text-gray-300 mb-6">Expert DJs with extensive music libraries and top-tier equipment.</p>
                     </div>
 
-                    <div class="service-card rounded-2xl p-8 text-center hover-lift">
+                    <div class="service-card rounded-2xl p-8 text-center hover-lift" data-aos="fade-up" data-aos-delay="300">
                         <div class="text-6xl mb-4">🔊</div>
                         <h3 class="text-2xl font-bold text-gold mb-4">PA Equipment</h3>
                         <p class="text-gray-300 mb-6">High-quality sound systems and audio equipment.</p>
                     </div>
 
-                    <div class="service-card rounded-2xl p-8 text-center hover-lift">
+                    <div class="service-card rounded-2xl p-8 text-center hover-lift" data-aos="fade-up" data-aos-delay="400">
                         <div class="text-6xl mb-4">💃</div>
                         <h3 class="text-2xl font-bold text-gold mb-4">Professional Dancers</h3>
                         <p class="text-gray-300 mb-6">Talented performers to add spectacular entertainment.</p>
                     </div>
                 </div>
                 
-                <div class="text-center">
-                    <button onclick="showPage('services')" class="bg-navy text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-darknavy transition-colors border border-gold">
-                        View All Services
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <button onclick="showPage('services')" class="bg-navy text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-darknavy transition-all border border-gold transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        🚀 View All Services
                     </button>
                 </div>
             </div>
@@ -229,7 +261,7 @@
                 </div>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <div class="dark-card rounded-xl overflow-hidden hover-lift">
+                    <div class="dark-card rounded-xl overflow-hidden hover-lift" data-aos="zoom-in" data-aos-delay="100">
                         <div class="image-placeholder h-48">
                             📸 Wedding Event Photo
                         </div>
@@ -239,7 +271,7 @@
                         </div>
                     </div>
                     
-                    <div class="dark-card rounded-xl overflow-hidden hover-lift">
+                    <div class="dark-card rounded-xl overflow-hidden hover-lift" data-aos="zoom-in" data-aos-delay="200">
                         <div class="image-placeholder h-48">
                             📸 Corporate Event Photo
                         </div>
@@ -249,7 +281,7 @@
                         </div>
                     </div>
                     
-                    <div class="dark-card rounded-xl overflow-hidden hover-lift">
+                    <div class="dark-card rounded-xl overflow-hidden hover-lift" data-aos="zoom-in" data-aos-delay="300">
                         <div class="image-placeholder h-48">
                             📸 Birthday Party Photo
                         </div>
@@ -260,9 +292,9 @@
                     </div>
                 </div>
                 
-                <div class="text-center">
-                    <button onclick="showPage('portfolio')" class="bg-gold text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-darkgold transition-colors">
-                        View Full Portfolio
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <button onclick="showPage('portfolio')" class="bg-gold text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        📂 View Full Portfolio
                     </button>
                 </div>
             </div>
@@ -276,7 +308,7 @@
                 </div>
                 
                 <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="blue-card rounded-xl p-8 text-center">
+                    <div class="blue-card rounded-xl p-8 text-center" data-aos="flip-left" data-aos-delay="100">
                         <div class="image-placeholder w-20 h-20 rounded-full mx-auto mb-4">
                             👤
                         </div>
@@ -285,7 +317,7 @@
                         <p class="text-sm text-gray-400">Wedding Clients</p>
                     </div>
                     
-                    <div class="blue-card rounded-xl p-8 text-center">
+                    <div class="blue-card rounded-xl p-8 text-center" data-aos="flip-left" data-aos-delay="200">
                         <div class="image-placeholder w-20 h-20 rounded-full mx-auto mb-4">
                             👤
                         </div>
@@ -294,7 +326,7 @@
                         <p class="text-sm text-gray-400">Corporate Client</p>
                     </div>
                     
-                    <div class="blue-card rounded-xl p-8 text-center">
+                    <div class="blue-card rounded-xl p-8 text-center" data-aos="flip-left" data-aos-delay="300">
                         <div class="image-placeholder w-20 h-20 rounded-full mx-auto mb-4">
                             👤
                         </div>
@@ -304,9 +336,9 @@
                     </div>
                 </div>
                 
-                <div class="text-center">
-                    <button onclick="showPage('testimonials')" class="bg-navy text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-darknavy transition-colors border border-gold">
-                        Read More Reviews
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <button onclick="showPage('testimonials')" class="bg-navy text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-darknavy transition-all border border-gold transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        ⭐ Read More Reviews
                     </button>
                 </div>
             </div>
@@ -317,7 +349,7 @@
     <div id="services" class="page">
         <div class="pt-20 pb-20 bg-gradient-to-br from-navy via-black to-gold">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-down">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Our Services</h1>
                     <p class="text-xl text-gold max-w-3xl mx-auto">
                         Complete entertainment solutions and trusted partnerships for unforgettable events
@@ -326,9 +358,9 @@
 
                 <!-- Core Services -->
                 <div class="mb-20">
-                    <h2 class="text-3xl font-bold text-white mb-12 text-center">Core Entertainment Services</h2>
+                    <h2 class="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Core Entertainment Services</h2>
                     <div class="grid md:grid-cols-2 gap-12">
-                        <div class="service-card rounded-2xl p-8 hover-lift">
+                        <div class="service-card rounded-2xl p-8 hover-lift" data-aos="fade-right" data-aos-delay="100">
                             <div class="text-6xl mb-6">🎤</div>
                             <h3 class="text-3xl font-bold text-gold mb-4">Master of Ceremonies</h3>
                             <p class="text-gray-300 mb-6">Professional MCs who bring charisma, energy, and seamless event flow to your special occasions. Our experienced hosts ensure your event runs smoothly from start to finish.</p>
@@ -338,12 +370,12 @@
                                 <li>• Professional presentation skills</li>
                                 <li>• Multilingual capabilities</li>
                             </ul>
-                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-colors border border-gold">
-                                Book MC Services
+                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-all border border-gold transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                🎤 Book MC Services
                             </button>
                         </div>
 
-                        <div class="service-card rounded-2xl p-8 hover-lift">
+                        <div class="service-card rounded-2xl p-8 hover-lift" data-aos="fade-left" data-aos-delay="200">
                             <div class="text-6xl mb-6">🎵</div>
                             <h3 class="text-3xl font-bold text-gold mb-4">Professional DJs</h3>
                             <p class="text-gray-300 mb-6">Expert DJs with extensive music libraries and top-tier equipment for unforgettable entertainment that keeps your guests dancing all night long.</p>
@@ -353,12 +385,12 @@
                                 <li>• Custom playlists for your event</li>
                                 <li>• Reading the crowd and atmosphere</li>
                             </ul>
-                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-colors border border-gold">
-                                Book DJ Services
+                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-all border border-gold transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                🎵 Book DJ Services
                             </button>
                         </div>
 
-                        <div class="service-card rounded-2xl p-8 hover-lift">
+                        <div class="service-card rounded-2xl p-8 hover-lift" data-aos="fade-right" data-aos-delay="300">
                             <div class="text-6xl mb-6">🔊</div>
                             <h3 class="text-3xl font-bold text-gold mb-4">PA Equipment Rental</h3>
                             <p class="text-gray-300 mb-6">High-quality sound systems, microphones, and audio equipment for crystal-clear event audio that ensures every word and note is heard perfectly.</p>
@@ -368,12 +400,12 @@
                                 <li>• Mixing consoles and amplifiers</li>
                                 <li>• Technical setup and support</li>
                             </ul>
-                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-colors border border-gold">
-                                Rent Equipment
+                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-all border border-gold transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                🔊 Rent Equipment
                             </button>
                         </div>
 
-                        <div class="service-card rounded-2xl p-8 hover-lift">
+                        <div class="service-card rounded-2xl p-8 hover-lift" data-aos="fade-left" data-aos-delay="400">
                             <div class="text-6xl mb-6">💃</div>
                             <h3 class="text-3xl font-bold text-gold mb-4">Professional Dancers</h3>
                             <p class="text-gray-300 mb-6">Talented dancers and performers to add spectacular entertainment to your celebrations with choreographed performances and interactive dance sessions.</p>
@@ -383,43 +415,43 @@
                                 <li>• Interactive dance sessions</li>
                                 <li>• Custom routines for your event</li>
                             </ul>
-                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-colors border border-gold">
-                                Book Dancers
+                            <button onclick="showPage('contact')" class="bg-navy text-white px-6 py-3 rounded-full hover:bg-darknavy transition-all border border-gold transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                💃 Book Dancers
                             </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Partner Services -->
-                <div class="dark-card rounded-3xl p-12">
+                <div class="dark-card rounded-3xl p-12" data-aos="fade-up" data-aos-delay="500">
                     <h2 class="text-3xl font-bold text-white mb-12 text-center">Trusted Partner Services</h2>
                     <p class="text-center text-gold mb-12 text-lg">Complete event solutions through our network of premium partners</p>
                     
                     <div class="grid md:grid-cols-3 gap-8">
-                        <div class="blue-card rounded-xl p-8 text-center hover-lift">
+                        <div class="blue-card rounded-xl p-8 text-center hover-lift" data-aos="zoom-in" data-aos-delay="600">
                             <div class="text-5xl mb-4">🍽️</div>
                             <h3 class="text-2xl font-bold text-gold mb-4">Catering Services</h3>
                             <p class="text-gray-300 mb-6">Premium catering partners offering diverse menus from local delicacies to international cuisine for all event sizes.</p>
-                            <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
-                                Request Catering
+                            <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                🍽️ Request Catering
                             </button>
                         </div>
 
-                        <div class="blue-card rounded-xl p-8 text-center hover-lift">
+                        <div class="blue-card rounded-xl p-8 text-center hover-lift" data-aos="zoom-in" data-aos-delay="700">
                             <div class="text-5xl mb-4">📸</div>
                             <h3 class="text-2xl font-bold text-gold mb-4">Photography & Videography</h3>
                             <p class="text-gray-300 mb-6">Professional photographers and videographers to capture every precious moment of your special event.</p>
-                            <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
-                                Book Photography
+                            <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                📸 Book Photography
                             </button>
                         </div>
 
-                        <div class="blue-card rounded-xl p-8 text-center hover-lift">
+                        <div class="blue-card rounded-xl p-8 text-center hover-lift" data-aos="zoom-in" data-aos-delay="800">
                             <div class="text-5xl mb-4">⛺</div>
                             <h3 class="text-2xl font-bold text-gold mb-4">Tent & Decor</h3>
                             <p class="text-gray-300 mb-6">Beautiful tents, decorations, and venue setup services to transform any space into your dream event location.</p>
-                            <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
-                                Request Tents
+                            <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                ⛺ Request Tents
                             </button>
                         </div>
                     </div>
@@ -432,7 +464,7 @@
     <div id="events" class="page">
         <div class="pt-20 pb-20 bg-gradient-to-br from-black via-navy to-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-down">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Event Types</h1>
                     <p class="text-xl text-gold max-w-3xl mx-auto">
                         We bring magic to every type of celebration across Africa and beyond
@@ -440,7 +472,7 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white" data-aos="fade-up" data-aos-delay="100">
                         <div class="text-6xl mb-6">💒</div>
                         <h3 class="text-2xl font-bold text-gold mb-4">Weddings</h3>
                         <p class="text-gray-300 mb-6">Make your special day unforgettable with our complete wedding entertainment package including MC, DJ, dancers, and all partner services.</p>
@@ -450,12 +482,12 @@
                             <li>• Photography and videography</li>
                             <li>• Catering and venue setup</li>
                         </ul>
-                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
-                            Plan Wedding
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            💒 Plan Wedding
                         </button>
                     </div>
 
-                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white" data-aos="fade-up" data-aos-delay="200">
                         <div class="text-6xl mb-6">🎂</div>
                         <h3 class="text-2xl font-bold text-gold mb-4">Birthday Parties</h3>
                         <p class="text-gray-300 mb-6">Celebrate another year of life with energetic entertainment, great music, and unforgettable memories for all ages.</p>
@@ -465,12 +497,12 @@
                             <li>• Custom music playlists</li>
                             <li>• Party planning and coordination</li>
                         </ul>
-                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
-                            Plan Birthday
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            🎂 Plan Birthday
                         </button>
                     </div>
 
-                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white" data-aos="fade-up" data-aos-delay="300">
                         <div class="text-6xl mb-6">🎓</div>
                         <h3 class="text-2xl font-bold text-gold mb-4">Graduations</h3>
                         <p class="text-gray-300 mb-6">Honor academic achievements with professional ceremony hosting and celebration entertainment that marks this important milestone.</p>
@@ -480,12 +512,12 @@
                             <li>• Celebration entertainment</li>
                             <li>• Photography services</li>
                         </ul>
-                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
-                            Plan Graduation
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            🎓 Plan Graduation
                         </button>
                     </div>
 
-                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white" data-aos="fade-up" data-aos-delay="400">
                         <div class="text-6xl mb-6">🏢</div>
                         <h3 class="text-2xl font-bold text-gold mb-4">Corporate Events</h3>
                         <p class="text-gray-300 mb-6">Professional corporate entertainment for conferences, seminars, product launches, and company celebrations.</p>
@@ -495,12 +527,12 @@
                             <li>• Corporate entertainment</li>
                             <li>• Audio-visual support</li>
                         </ul>
-                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
-                            Plan Corporate Event
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            🏢 Plan Corporate Event
                         </button>
                     </div>
 
-                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white" data-aos="fade-up" data-aos-delay="500">
                         <div class="text-6xl mb-6">💼</div>
                         <h3 class="text-2xl font-bold text-gold mb-4">Conferences & Seminars</h3>
                         <p class="text-gray-300 mb-6">Professional hosting and technical support for educational and business conferences with seamless execution.</p>
@@ -510,12 +542,12 @@
                             <li>• Audience engagement</li>
                             <li>• Break entertainment</li>
                         </ul>
-                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
-                            Plan Conference
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            💼 Plan Conference
                         </button>
                     </div>
 
-                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white">
+                    <div class="bg-gradient-to-br from-navy to-black border-2 border-gold rounded-2xl p-8 hover-lift text-white" data-aos="fade-up" data-aos-delay="600">
                         <div class="text-6xl mb-6">🎉</div>
                         <h3 class="text-2xl font-bold text-gold mb-4">Special Celebrations</h3>
                         <p class="text-gray-300 mb-6">Any other special occasion you want to celebrate - we customize our services to make your event unique and memorable.</p>
@@ -525,8 +557,8 @@
                             <li>• Themed entertainment</li>
                             <li>• Complete coordination</li>
                         </ul>
-                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-colors">
-                            Plan Custom Event
+                        <button onclick="showPage('contact')" class="bg-gold text-black px-6 py-3 rounded-full hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            🎉 Plan Custom Event
                         </button>
                     </div>
                 </div>
@@ -538,7 +570,7 @@
     <div id="portfolio" class="page">
         <div class="pt-20 pb-20 bg-gradient-to-br from-navy via-black to-navy">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-down">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Our Portfolio</h1>
                     <p class="text-xl text-gold max-w-3xl mx-auto">
                         Showcasing memorable events and celebrations we've brought to life
@@ -547,9 +579,9 @@
 
                 <!-- Wedding Gallery -->
                 <div class="mb-16">
-                    <h2 class="text-3xl font-bold text-white mb-8">Wedding Celebrations</h2>
+                    <h2 class="text-3xl font-bold text-white mb-8" data-aos="fade-up">Wedding Celebrations</h2>
                     <div class="portfolio-grid">
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift" data-aos="zoom-in" data-aos-delay="100">
                             <div class="image-placeholder h-64">
                                 📸 Wedding Ceremony Photo
                             </div>
@@ -559,7 +591,7 @@
                             </div>
                         </div>
                         
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift" data-aos="zoom-in" data-aos-delay="200">
                             <div class="image-placeholder h-64">
                                 📸 Wedding Reception Photo
                             </div>
@@ -569,7 +601,7 @@
                             </div>
                         </div>
                         
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift" data-aos="zoom-in" data-aos-delay="300">
                             <div class="image-placeholder h-64">
                                 🎥 Wedding Video Highlight
                             </div>
@@ -583,9 +615,9 @@
 
                 <!-- Corporate Events -->
                 <div class="mb-16">
-                    <h2 class="text-3xl font-bold text-white mb-8">Corporate Events</h2>
+                    <h2 class="text-3xl font-bold text-white mb-8" data-aos="fade-up">Corporate Events</h2>
                     <div class="portfolio-grid">
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift" data-aos="fade-right" data-aos-delay="100">
                             <div class="image-placeholder h-64">
                                 📸 Conference Setup Photo
                             </div>
@@ -595,7 +627,7 @@
                             </div>
                         </div>
                         
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift" data-aos="fade-up" data-aos-delay="200">
                             <div class="image-placeholder h-64">
                                 📸 Corporate Gala Photo
                             </div>
@@ -605,7 +637,7 @@
                             </div>
                         </div>
                         
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift" data-aos="fade-left" data-aos-delay="300">
                             <div class="image-placeholder h-64">
                                 📸 Product Launch Photo
                             </div>
@@ -619,9 +651,9 @@
 
                 <!-- Birthday Parties -->
                 <div class="mb-16">
-                    <h2 class="text-3xl font-bold text-white mb-8">Birthday Celebrations</h2>
+                    <h2 class="text-3xl font-bold text-white mb-8" data-aos="fade-up">Birthday Celebrations</h2>
                     <div class="portfolio-grid">
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift" data-aos="flip-left" data-aos-delay="100">
                             <div class="image-placeholder h-64">
                                 📸 Kids Birthday Party Photo
                             </div>
@@ -631,7 +663,7 @@
                             </div>
                         </div>
                         
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift" data-aos="flip-left" data-aos-delay="200">
                             <div class="image-placeholder h-64">
                                 📸 Adult Birthday Party Photo
                             </div>
@@ -641,7 +673,7 @@
                             </div>
                         </div>
                         
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg hover-lift" data-aos="flip-left" data-aos-delay="300">
                             <div class="image-placeholder h-64">
                                 🎥 Birthday Party Video
                             </div>
@@ -654,10 +686,10 @@
                 </div>
 
                 <!-- Video Testimonials Section -->
-                <div class="blue-card rounded-3xl p-12">
+                <div class="blue-card rounded-3xl p-12" data-aos="fade-up" data-aos-delay="400">
                     <h2 class="text-3xl font-bold text-white mb-8 text-center">Video Testimonials</h2>
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg" data-aos="slide-right" data-aos-delay="500">
                             <div class="image-placeholder h-48">
                                 🎥 Client Video Testimonial 1
                             </div>
@@ -667,7 +699,7 @@
                             </div>
                         </div>
                         
-                        <div class="dark-card rounded-xl overflow-hidden shadow-lg">
+                        <div class="dark-card rounded-xl overflow-hidden shadow-lg" data-aos="slide-left" data-aos-delay="600">
                             <div class="image-placeholder h-48">
                                 🎥 Client Video Testimonial 2
                             </div>
@@ -686,7 +718,7 @@
     <div id="about" class="page">
         <div class="pt-20 pb-20 bg-gradient-to-br from-black via-navy to-gold">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-down">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">About Us</h1>
                     <p class="text-xl text-gold max-w-3xl mx-auto">
                         Meet the team behind Africa's premier entertainment booking platform
@@ -696,13 +728,13 @@
                 <!-- Company Story -->
                 <div class="mb-20">
                     <div class="grid lg:grid-cols-2 gap-12 items-center">
-                        <div>
+                        <div data-aos="fade-right">
                             <h2 class="text-4xl font-bold text-white mb-6">Our Story</h2>
                             <p class="text-lg text-gray-300 mb-6">
                                 MC Pato Entertainment was born from a passion for creating unforgettable moments. We are committed to giving our clients the absolute best entertainment experience across Africa and beyond.
                             </p>
                             <p class="text-lg text-gray-300 mb-8">
-                                From intimate celebrations to grand events, we handle every detail with professionalism and creativity. Our mission is simple: We do the work, They smile.
+                                From intimate celebrations to grand events, we handle every detail with professionalism and creativity. Our mission is simple: <span class="text-gold font-semibold">Your Joy, Our Concern</span>.
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4">
                                 <div class="flex items-center">
@@ -719,7 +751,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative">
+                        <div class="relative" data-aos="fade-left">
                             <div class="bg-gradient-to-br from-navy to-gold rounded-2xl p-8 text-white text-center">
                                 <div class="text-6xl mb-4">🌍</div>
                                 <h3 class="text-2xl font-bold mb-4">Serving Africa & Beyond</h3>
@@ -733,11 +765,11 @@
 
                 <!-- Team Section -->
                 <div class="mb-20">
-                    <h2 class="text-3xl font-bold text-white mb-12 text-center">Meet Our Team</h2>
+                    <h2 class="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Meet Our Team</h2>
                     
                     <div class="grid md:grid-cols-3 gap-8">
                         <!-- MC Pato -->
-                        <div class="text-center dark-card rounded-2xl p-8">
+                        <div class="text-center dark-card rounded-2xl p-8" data-aos="zoom-in" data-aos-delay="100">
                             <div class="image-placeholder w-48 h-48 rounded-full mx-auto mb-6">
                                 📸 MC Pato Photo
                             </div>
@@ -749,7 +781,7 @@
                         </div>
 
                         <!-- Dance Team -->
-                        <div class="text-center dark-card rounded-2xl p-8">
+                        <div class="text-center dark-card rounded-2xl p-8" data-aos="zoom-in" data-aos-delay="200">
                             <div class="image-placeholder w-48 h-48 rounded-full mx-auto mb-6">
                                 📸 Dance Team Photo
                             </div>
@@ -761,7 +793,7 @@
                         </div>
 
                         <!-- DJ Team -->
-                        <div class="text-center dark-card rounded-2xl p-8">
+                        <div class="text-center dark-card rounded-2xl p-8" data-aos="zoom-in" data-aos-delay="300">
                             <div class="image-placeholder w-48 h-48 rounded-full mx-auto mb-6">
                                 📸 DJ Team Photo
                             </div>
@@ -775,14 +807,14 @@
                 </div>
 
                 <!-- Partner Network -->
-                <div class="blue-card rounded-3xl p-12">
+                <div class="blue-card rounded-3xl p-12" data-aos="fade-up" data-aos-delay="400">
                     <h2 class="text-3xl font-bold text-white mb-8 text-center">Our Partner Network</h2>
                     <p class="text-center text-gold mb-12 text-lg">
                         We've partnered with the best in the industry to provide complete event solutions
                     </p>
                     
                     <div class="grid md:grid-cols-3 gap-8">
-                        <div class="dark-card rounded-xl p-8 text-center">
+                        <div class="dark-card rounded-xl p-8 text-center" data-aos="slide-up" data-aos-delay="500">
                             <div class="text-5xl mb-4">🍽️</div>
                             <h3 class="text-xl font-bold text-gold mb-4">Premium Caterers</h3>
                             <p class="text-gray-300">
@@ -790,7 +822,7 @@
                             </p>
                         </div>
 
-                        <div class="dark-card rounded-xl p-8 text-center">
+                        <div class="dark-card rounded-xl p-8 text-center" data-aos="slide-up" data-aos-delay="600">
                             <div class="text-5xl mb-4">📸</div>
                             <h3 class="text-xl font-bold text-gold mb-4">Professional Photographers</h3>
                             <p class="text-gray-300">
@@ -798,7 +830,7 @@
                             </p>
                         </div>
 
-                        <div class="dark-card rounded-xl p-8 text-center">
+                        <div class="dark-card rounded-xl p-8 text-center" data-aos="slide-up" data-aos-delay="700">
                             <div class="text-5xl mb-4">⛺</div>
                             <h3 class="text-xl font-bold text-gold mb-4">Tent & Decor Specialists</h3>
                             <p class="text-gray-300">
@@ -815,7 +847,7 @@
     <div id="testimonials" class="page">
         <div class="pt-20 pb-20 bg-gradient-to-br from-navy via-black to-navy">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-down">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Client Testimonials</h1>
                     <p class="text-xl text-gold max-w-3xl mx-auto">
                         Hear what our clients say about their unforgettable experiences with MC Pato Entertainment
@@ -824,7 +856,7 @@
 
                 <!-- Written Testimonials -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                    <div class="blue-card rounded-xl p-8">
+                    <div class="blue-card rounded-xl p-8" data-aos="flip-up" data-aos-delay="100">
                         <div class="flex items-center mb-4">
                             <div class="image-placeholder w-16 h-16 rounded-full mr-4">
                                 👤
@@ -840,7 +872,7 @@
                         </p>
                     </div>
 
-                    <div class="blue-card rounded-xl p-8">
+                    <div class="blue-card rounded-xl p-8" data-aos="flip-up" data-aos-delay="200">
                         <div class="flex items-center mb-4">
                             <div class="image-placeholder w-16 h-16 rounded-full mr-4">
                                 👤
@@ -856,7 +888,7 @@
                         </p>
                     </div>
 
-                    <div class="blue-card rounded-xl p-8">
+                    <div class="blue-card rounded-xl p-8" data-aos="flip-up" data-aos-delay="300">
                         <div class="flex items-center mb-4">
                             <div class="image-placeholder w-16 h-16 rounded-full mr-4">
                                 👤
@@ -872,7 +904,7 @@
                         </p>
                     </div>
 
-                    <div class="blue-card rounded-xl p-8">
+                    <div class="blue-card rounded-xl p-8" data-aos="flip-up" data-aos-delay="400">
                         <div class="flex items-center mb-4">
                             <div class="image-placeholder w-16 h-16 rounded-full mr-4">
                                 👤
@@ -888,7 +920,7 @@
                         </p>
                     </div>
 
-                    <div class="blue-card rounded-xl p-8">
+                    <div class="blue-card rounded-xl p-8" data-aos="flip-up" data-aos-delay="500">
                         <div class="flex items-center mb-4">
                             <div class="image-placeholder w-16 h-16 rounded-full mr-4">
                                 👤
@@ -904,7 +936,7 @@
                         </p>
                     </div>
 
-                    <div class="blue-card rounded-xl p-8">
+                    <div class="blue-card rounded-xl p-8" data-aos="flip-up" data-aos-delay="600">
                         <div class="flex items-center mb-4">
                             <div class="image-placeholder w-16 h-16 rounded-full mr-4">
                                 👤
@@ -922,10 +954,10 @@
                 </div>
 
                 <!-- Video Testimonials -->
-                <div class="dark-card rounded-3xl p-12">
+                <div class="dark-card rounded-3xl p-12" data-aos="fade-up" data-aos-delay="700">
                     <h2 class="text-3xl font-bold text-white mb-8 text-center">Video Testimonials</h2>
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="blue-card rounded-xl overflow-hidden shadow-lg">
+                        <div class="blue-card rounded-xl overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="800">
                             <div class="image-placeholder h-64">
                                 🎥 Video Testimonial - Wedding Couple
                             </div>
@@ -936,7 +968,7 @@
                             </div>
                         </div>
                         
-                        <div class="blue-card rounded-xl overflow-hidden shadow-lg">
+                        <div class="blue-card rounded-xl overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="900">
                             <div class="image-placeholder h-64">
                                 🎥 Video Testimonial - Corporate Client
                             </div>
@@ -947,7 +979,7 @@
                             </div>
                         </div>
                         
-                        <div class="blue-card rounded-xl overflow-hidden shadow-lg">
+                        <div class="blue-card rounded-xl overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="1000">
                             <div class="image-placeholder h-64">
                                 🎥 Video Testimonial - Birthday Client
                             </div>
@@ -958,7 +990,7 @@
                             </div>
                         </div>
                         
-                        <div class="blue-card rounded-xl overflow-hidden shadow-lg">
+                        <div class="blue-card rounded-xl overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="1100">
                             <div class="image-placeholder h-64">
                                 🎥 Video Testimonial - Multiple Clients
                             </div>
@@ -972,11 +1004,11 @@
                 </div>
 
                 <!-- Call to Action -->
-                <div class="text-center mt-16">
+                <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="1200">
                     <h2 class="text-3xl font-bold text-white mb-6">Ready to Create Your Own Success Story?</h2>
                     <p class="text-xl text-gold mb-8">Join hundreds of satisfied clients who chose MC Pato Entertainment for their special events</p>
-                    <button onclick="showPage('contact')" class="bg-gold text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-darkgold transition-colors">
-                        Book Your Event Today
+                    <button onclick="showPage('contact')" class="bg-gold text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-darkgold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        🌟 Book Your Event Today
                     </button>
                 </div>
             </div>
@@ -987,7 +1019,7 @@
     <div id="contact" class="page">
         <div class="pt-20 pb-20 bg-gradient-to-br from-black via-navy to-gold">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16" data-aos="fade-down">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Contact & Booking</h1>
                     <p class="text-xl text-gold max-w-3xl mx-auto">
                         Ready to make your event unforgettable? Get in touch for a custom quote
@@ -996,7 +1028,7 @@
 
                 <div class="grid lg:grid-cols-2 gap-12">
                     <!-- Booking Form -->
-                    <div class="dark-card rounded-2xl p-8">
+                    <div class="dark-card rounded-2xl p-8" data-aos="fade-right">
                         <h2 class="text-3xl font-bold text-white mb-6">Request Custom Quote</h2>
                         
                         <form id="mainBookingForm" onsubmit="submitMainBooking(event)">
@@ -1103,19 +1135,19 @@
                             </div>
                             
                             <div class="mt-8">
-                                <button type="submit" class="w-full px-6 py-4 bg-gold text-black rounded-lg hover:bg-darkgold transition-colors font-semibold text-lg">
-                                    Request Custom Quote
+                                <button type="submit" class="w-full px-6 py-4 bg-gold text-black rounded-lg hover:bg-darkgold transition-all font-semibold text-lg transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                    🎯 Request Custom Quote
                                 </button>
                             </div>
                         </form>
                     </div>
 
                     <!-- Contact Information -->
-                    <div>
+                    <div data-aos="fade-left">
                         <h2 class="text-3xl font-bold text-white mb-8">Get In Touch</h2>
                         
                         <div class="space-y-6 mb-12">
-                            <div class="flex items-center">
+                            <div class="flex items-center" data-aos="slide-right" data-aos-delay="100">
                                 <div class="bg-gold rounded-full p-4 mr-6">
                                     <span class="text-2xl">📞</span>
                                 </div>
@@ -1127,7 +1159,7 @@
                                 </div>
                             </div>
                             
-                            <div class="flex items-center">
+                            <div class="flex items-center" data-aos="slide-right" data-aos-delay="200">
                                 <div class="bg-gold rounded-full p-4 mr-6">
                                     <span class="text-2xl">💬</span>
                                 </div>
@@ -1139,7 +1171,7 @@
                                 </div>
                             </div>
                             
-                            <div class="flex items-center">
+                            <div class="flex items-center" data-aos="slide-right" data-aos-delay="300">
                                 <div class="bg-gold rounded-full p-4 mr-6">
                                     <span class="text-2xl">✉️</span>
                                 </div>
@@ -1153,7 +1185,7 @@
                         </div>
 
                         <!-- Service Areas -->
-                        <div class="blue-card rounded-2xl p-8">
+                        <div class="blue-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="400">
                             <h3 class="text-2xl font-bold text-white mb-4">Service Areas</h3>
                             <p class="text-lg mb-4 text-gray-300">We proudly serve clients across:</p>
                             <ul class="space-y-2 text-gray-300">
@@ -1309,10 +1341,33 @@
             }
         });
 
-        // Initialize page
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            const closeIcon = document.getElementById('closeIcon');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        }
+
+        // Initialize page and AOS
         document.addEventListener('DOMContentLoaded', function() {
             showPage('home');
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99108e6537dc8a67',t:'MTc2MDg3OTg1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9910b68ff3bf8a67',t:'MTc2MDg4MTQ5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
